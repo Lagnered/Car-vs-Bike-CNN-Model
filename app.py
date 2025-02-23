@@ -40,7 +40,7 @@ if image_file is not None:
     try:
         # Open and display image
         image = Image.open(image_file)
-        st.image(image, caption="Selected Image", use_column_width=True)
+        st.image(image, caption="Selected Image", use_container_width=True)
 
         # "Predict" button to trigger inference
         if st.button("Predict"):
