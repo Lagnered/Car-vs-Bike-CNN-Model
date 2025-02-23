@@ -45,9 +45,12 @@ if image_file is not None:
         # "Predict" button to trigger inference
         if st.button("Predict"):
             # Preprocess image
-            image = image.resize((224, 224))  # Ensure size matches model input
-            image = np.array(image, dtype=np.float32) / 255.0  # Normalize
-            image = np.expand_dims(image, axis=0)  # Expand dimensions
+            image = image.resize((224, 224))  # Resize to match model input size
+            image = np.array(image, dtype=np.float32) / 255.0  # Normalize to [0,1]
+
+            # Ensure correct shape
+            if len(image.shape) == 2:  
+                image = np.stack((image,)*3, axis=-1)  # Convert grayscale to RGB
 
             # Set input tensor
             interpreter.set_tensor(input_details[0]['index'], image)
