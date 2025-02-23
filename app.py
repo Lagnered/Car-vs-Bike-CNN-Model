@@ -21,7 +21,7 @@ input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
 # Define class labels
-CLASS_NAMES = ["Car", "Bike"]
+CLASS_NAMES = ["Bike", "Car"]
 
 # Streamlit UI
 st.title("TFLite Image Classifier")
