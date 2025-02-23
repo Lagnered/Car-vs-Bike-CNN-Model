@@ -24,7 +24,7 @@ output_details = interpreter.get_output_details()
 CLASS_NAMES = ["Bike", "Car"]
 
 # Streamlit UI
-st.title("TFLite Image Classifier")
+st.title("Car vs Bike Image Classifier")
 
 # Choose Upload Method
 genre = st.radio("Choose Image Source", ("Upload", "Camera"))
